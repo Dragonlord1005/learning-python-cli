@@ -1,8 +1,10 @@
+[tool]
 [tool.poetry]
-name = "learning-python-cli"
+name = "hi"
 version = "0.1.0"
-description = ""
-authors = ["Dragonlord1005"]
+homepage = "https://github.com/Dragonlord1005/hi"
+description = "Top-level package for hi."
+authors = ["Dragonlord1005 <none>"]
 readme = "README.rst"
 license =  "MIT"
 classifiers=[
@@ -18,17 +20,28 @@ classifiers=[
 ]
 packages = [
     { include = "hi" },
-    { 
+    { include = "tests", format = "sdist" },
+]
 
 [tool.poetry.dependencies]
-python = "^3.8"
-cookiecutter = "^1.7.3"
+python = "*"
+click = "*"
 
 [tool.poetry.dev-dependencies]
+bumpversion = "*"
+coverage = "*"
+flake8 = "*"
+invoke = "*"
+isort = "*"
+pylint = "*"
+
+sphinx = "*"
+tox = "*"
+yapf = "*"
 
 [tool.poetry.scripts]
 hi = 'hi.cli:main'
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
